@@ -1,0 +1,76 @@
+/*
+Лисовой Владислав (АТ-201)
+Вариант по списку: №13.
+Лабораторная работа №1 (Базовый уровень).
+Постановка задачи: Напечатать фамилии студентов, которые
+сдали математику на «отлично» и определить их количество.
+*/
+
+package com.onpy;
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        int counter_excellent_student = 0;
+
+        Student Ivanov = new Student();
+        Ivanov.exam_physics = 70;
+        Ivanov.exam_maths = 75;
+        Ivanov.exam_history = 90;
+        Ivanov.say("Ivanov");
+        System.out.println("Year Birthday: " + Ivanov.year_birthday);
+        System.out.println("Group Student: " + Ivanov.group);
+        System.out.println("Exam Physics: " + Ivanov.exam_physics);
+        System.out.println("Year Maths: " + Ivanov.exam_maths);
+        System.out.println("Year History: " + Ivanov.exam_history);
+        if(Ivanov.exam_maths >= 75)
+        {
+            System.out.println("This student has passed math with - Excellent" + "\n");
+            counter_excellent_student = counter_excellent_student + 1;
+        }
+
+        Student Petrov = new Student();
+        Petrov.exam_physics = 80;
+        Petrov.exam_maths = 85;
+        Petrov.exam_history = 100;
+        Ivanov.say("Petrov");
+        System.out.println("Year Birthday: " + Petrov.year_birthday);
+        System.out.println("Group Student: " + Petrov.group);
+        System.out.println("Exam Physics: " + Petrov.exam_physics);
+        System.out.println("Year Maths: " + Petrov.exam_maths);
+        System.out.println("Year History: " + Petrov.exam_history);
+        if(Petrov.exam_maths >= 75)
+        {
+            System.out.println("This student has passed math with - Excellent");
+            counter_excellent_student = counter_excellent_student + 1;
+        }
+        if(counter_excellent_student > 0)
+        {
+            System.out.println("The number of students who passed math with excellent marks = " + counter_excellent_student);
+        }
+        else
+        {
+            System.out.println("No excellent students in mathematics");
+        }
+    }
+}
+
+// Новый класс
+
+package com.onpy;
+
+public class Student {
+    public int year_birthday = 2003;
+    public int group = 1;
+    public int exam_physics = 0;
+    public int exam_maths = 0;
+    public int exam_history = 0;
+
+    public void say (String surname) {
+        System.out.println("Surname: " + surname);
+    }
+}
+
